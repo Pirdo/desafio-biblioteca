@@ -17,6 +17,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FooterComponent } from './components/template/footer/footer.component';
 import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
 import { HomeComponent } from './components/views/home/home.component';
+import { LivroReadComponent } from './components/livros/livro-read/livro-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
     declarations: [
@@ -24,7 +28,8 @@ import { HomeComponent } from './components/views/home/home.component';
         HeaderComponent,
         FooterComponent,
         LivrosCrudComponent,
-        HomeComponent
+        HomeComponent,
+        LivroReadComponent
     ],
     imports: [
         BrowserModule,
@@ -33,7 +38,10 @@ import { HomeComponent } from './components/views/home/home.component';
         MatToolbarModule,
         MatButtonModule,
         MatFormFieldModule,
-        MatCardModule
+        MatCardModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule
     ],
     providers: [],
     bootstrap: [AppComponent]
