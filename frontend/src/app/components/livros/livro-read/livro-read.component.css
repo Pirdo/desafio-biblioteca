@@ -11,3 +11,13 @@
     display: flex;
     text-align: center;
 }
+
+.edit > i {
+    margin: 10px;
+    color: #68e122;
+}
+
+.delete > i {
+    margin: 10px;
+    color: #de2b2b;
+}

@@ -8,15 +8,14 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 export interface LivroReadItem {
     name: string;
     img: string;
-    actions: string;
 }
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: LivroReadItem[] = [
-    { img: 'ibm-logo.png', name: 'A arte da guerra', actions: '' },
-    { img: 'ibm-logo.png', name: '1984', actions: '' },
-    { img: 'ibm-logo.png', name: 'A revolução dos bichos', actions: '' },
-    { img: 'ibm-logo.png', name: 'O pequeno príncipe', actions: '' }
+    { img: 'ibm-logo.png', name: 'A arte da guerra' },
+    { img: 'ibm-logo.png', name: '1984' },
+    { img: 'ibm-logo.png', name: 'A revolução dos bichos' },
+    { img: 'ibm-logo.png', name: 'O pequeno príncipe' }
 ];
 
 /**
