@@ -1,3 +1,13 @@
 .full-width-table {
     width: 100%;
 }
+
+#tableLivros {
+    margin: 30px 35px 35px 35px;
+}
+
+#novoL {
+    margin: 15px;
+    display: flex;
+    text-align: center;
+}
