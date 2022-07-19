@@ -1,3 +1,4 @@
+import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
 import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
     {
         path: 'biblioteca',
         component: LivrosCrudComponent
+    },
+    {
+        path: 'livros/create',
+        component: LivroCreateComponent
     }
 ];
 

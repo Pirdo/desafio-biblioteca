@@ -21,6 +21,7 @@ import { LivroReadComponent } from './components/livros/livro-read/livro-read.co
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import { MatSortModule } from '@angular/material/sort';
         FooterComponent,
         LivrosCrudComponent,
         HomeComponent,
-        LivroReadComponent
+        LivroReadComponent,
+        LivroCreateComponent
     ],
     imports: [
         BrowserModule,
@@ -41,7 +43,8 @@ import { MatSortModule } from '@angular/material/sort';
         MatCardModule,
         MatTableModule,
         MatPaginatorModule,
-        MatSortModule
+        MatSortModule,
+        MatListModule
     ],
     providers: [],
     bootstrap: [AppComponent]
