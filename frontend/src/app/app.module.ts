@@ -25,6 +25,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
 import { LivroDeleteComponent } from './components/livros/livro-delete/livro-delete.component';
+import { LivroUpdateComponent } from './components/livros/livro-update/livro-update.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { LivroDeleteComponent } from './components/livros/livro-delete/livro-del
         HomeComponent,
         LivroReadComponent,
         LivroCreateComponent,
-        LivroDeleteComponent
+        LivroDeleteComponent,
+        LivroUpdateComponent
     ],
     imports: [
         BrowserModule,
