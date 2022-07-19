@@ -1,3 +1,4 @@
+import { LivroDeleteComponent } from './components/livros/livro-delete/livro-delete.component';
 import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
 import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
 import { HomeComponent } from './components/views/home/home.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
     {
         path: 'livros/create',
         component: LivroCreateComponent
+    },
+    {
+        path: 'livros/delete',
+        component: LivroDeleteComponent
     }
 ];
 
