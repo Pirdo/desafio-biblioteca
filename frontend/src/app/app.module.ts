@@ -13,6 +13,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
@@ -22,6 +24,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
+import { LivroDeleteComponent } from './components/livros/livro-delete/livro-delete.component';
 
 @NgModule({
     declarations: [
@@ -31,7 +34,8 @@ import { LivroCreateComponent } from './components/livros/livro-create/livro-cre
         LivrosCrudComponent,
         HomeComponent,
         LivroReadComponent,
-        LivroCreateComponent
+        LivroCreateComponent,
+        LivroDeleteComponent
     ],
     imports: [
         BrowserModule,
@@ -44,7 +48,9 @@ import { LivroCreateComponent } from './components/livros/livro-create/livro-cre
         MatTableModule,
         MatPaginatorModule,
         MatSortModule,
-        MatListModule
+        MatListModule,
+        FormsModule,
+        MatInputModule
     ],
     providers: [],
     bootstrap: [AppComponent]

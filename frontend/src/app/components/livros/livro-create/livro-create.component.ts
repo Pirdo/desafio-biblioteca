@@ -13,6 +13,6 @@ export class LivroCreateComponent implements OnInit {
     ngOnInit(): void {}
 
     cancel(): void {
-        this.router.navigate(['/products']);
+        this.router.navigate(['/biblioteca']);
     }
 }
