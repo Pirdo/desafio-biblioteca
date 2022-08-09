@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 
 import { FooterComponent } from './components/template/footer/footer.component';
-import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
+import { LivrosCrudComponent } from './components/views/livros/livros-crud.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { LivroReadComponent } from './components/livros/livro-read/livro-read.component';
 import { MatTableModule } from '@angular/material/table';

@@ -1,7 +1,7 @@
 import { LivroUpdateComponent } from './components/livros/livro-update/livro-update.component';
 import { LivroDeleteComponent } from './components/livros/livro-delete/livro-delete.component';
 import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
-import { LivrosCrudComponent } from './components/views/livros-crud/livros-crud.component';
+import { LivrosCrudComponent } from './components/views/livros/livros-crud.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
