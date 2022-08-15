@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderComponent } from './components/template/header/header.component';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
@@ -26,6 +26,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { LivroCreateComponent } from './components/livros/livro-create/livro-create.component';
 import { LivroDeleteComponent } from './components/livros/livro-delete/livro-delete.component';
 import { LivroUpdateComponent } from './components/livros/livro-update/livro-update.component';
+import { LivrosService } from './components/livros/livros.service';
 
 @NgModule({
     declarations: [
@@ -52,9 +53,10 @@ import { LivroUpdateComponent } from './components/livros/livro-update/livro-upd
         MatSortModule,
         MatListModule,
         FormsModule,
-        MatInputModule
+        MatInputModule,
+        HttpClientModule
     ],
-    providers: [],
+    providers: [LivrosService, HttpClientModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

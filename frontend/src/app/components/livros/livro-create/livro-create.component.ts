@@ -1,5 +1,6 @@
+import { Livro } from './../../../models/livro';
 import { LivrosService } from './../livros.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
     styleUrls: ['./livro-create.component.css']
 })
 export class LivroCreateComponent implements OnInit {
-    constructor(private router: Router, livrosService: LivrosService) {}
+    constructor(private router: Router, private livroService: LivrosService) {}
 
     ngOnInit(): void {}
 
