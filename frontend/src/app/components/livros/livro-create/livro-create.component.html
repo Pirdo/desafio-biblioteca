@@ -1,16 +1,43 @@
-<mat-card>
-    <mat-card-title>Novo Livro </mat-card-title>
-    <form class="createForm">
-        <mat-form-field>
-            <input matInput placeholder="Nome" name="name" />
-        </mat-form-field>
-        <mat-form-field>
-            <input matInput placeholder="Preço (R$)" name="price" />
-        </mat-form-field>
-    </form>
-    <button mat-raised-button color="primary">Salvar</button>
-    <button mat-raised-button (click)="cancel()">Cancelar</button>
-</mat-card>
-<!-- [(ngModel)]="product.price" -->
-<!-- [(ngModel)]="product.name" -->
-<!-- createProduct() -->
+<form [formGroup]="form">
+    <div>
+        <label for="titulo">Título</label>
+        <input
+            id="titulo"
+            type="text"
+            placeholder="Título do livro"
+            formControlName="titulo"
+            required
+        />
+    </div>
+    <div>
+        <label for="autor">Autor</label>
+        <input
+            id="autor"
+            type="text"
+            placeholder="Autor do livro"
+            formControlName="autor"
+            required
+        />
+    </div>
+    <div>
+        <label for="editora">Editora</label>
+        <input
+            id="editora"
+            type="text"
+            placeholder="Editora do livro"
+            formControlName="editora"
+            required
+        />
+    </div>
+    <div>
+        <label for="publicacao">Publicação</label>
+        <input
+            id="publicacao"
+            type="text"
+            placeholder="Publicação do livro"
+            formControlName="publicacao"
+            required
+        />
+    </div>
+    <button type="submit" (click)="onSubmit()">Enviar</button>
+</form>

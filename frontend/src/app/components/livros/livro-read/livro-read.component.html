@@ -5,13 +5,45 @@
 </div>
 
 <div>
-    <h1>Oi</h1>
-    <table *ngFor="let livros of livro">
-        <tr>
-            <td>Id</td>
-        </tr>
-        <tr>
-            <td>{{ livros.id }}</td>
-        </tr>
+    <table border="1px" [cellPadding]="5">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Editora</th>
+                <th>Publicação</th>
+                <th>Data Registrado</th>
+                <th>Açōes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let livros of livro">
+                <td>
+                    {{ livros.livro_titulo }}
+                </td>
+                <td>
+                    {{ livros.livro_autor }}
+                </td>
+                <td>
+                    {{ livros.livro_editora }}
+                </td>
+                <td>
+                    {{ livros.livro_publicacao }}
+                </td>
+                <td>
+                    {{ livros.livro_data_registrado }}
+                </td>
+                <td>
+                    <div routerLink="/livros/update">
+                        <button (click)="onSendUpdate(livros)">Editar</button>
+                    </div>
+                    <div>
+                        <button (click)="onDelete(livros.livro_id)">
+                            Deletar
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
     </table>
 </div>

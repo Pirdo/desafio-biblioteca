@@ -8,24 +8,43 @@ router.post('/adicionar', (req, res) => {
     res.json({ message: 'insert funcionou!' });
 });
 
-router.get('/buscar', (req, res) => {
-    livroController.buscarLivro();
-    res.json({ message: `select funcionou!` });
+router.get('/buscar', async (req, res) => {
+    try {
+        const results = await livroController.buscarLivro();
+
+        res.json(results);
+    } catch (err) {
+        console.error(err);
+    }
 });
 
-router.get('/buscarId/:id', (req, res) => {
-    livroController.buscarIdLivro(req.params.id);
-    res.json({ message: 'edit funcionou!' });
+router.get('/buscarId/:id', async (req, res) => {
+    try {
+        const results = await livroController.buscarIdLivro(req.params.id);
+        res.json(results);
+    } catch (err) {
+        console.error(err);
+    }
 });
 
-router.put('/atualizar', (req, res) => {
-    livroController.atualizarLivro(req.body);
-    res.json({ message: 'update funcionou!' });
+router.put('/atualizar/:id', async (req, res) => {
+    try {
+        const busca = await livroController.buscarIdLivro(req.params.id);
+        const data = await livroController.atualizarLivro(req.body);
+        res.json(data);
+        console.log(busca);
+    } catch (err) {
+        console.error(err);
+    }
 });
 
-router.delete('/deletar/:id', (req, res) => {
-    livroController.deleteLivro(req.params.id);
-    res.json({ message: 'delete funcionou!' });
+router.delete('/deletar/:id', async (req, res) => {
+    try {
+        const data = await livroController.deleteLivro(req.params.id);
+        res.json(data);
+    } catch (err) {
+        console.error(err);
+    }
 });
 
 module.exports = router;

@@ -1,3 +1,4 @@
+const { json } = require('express');
 const pool = require('../db/conn');
 
 const insertLivro = function ({
@@ -7,65 +8,60 @@ const insertLivro = function ({
     publicacao,
     dataRegistrado
 }) {
-    const sql = `INSERT INTO livros (livro_titulo, livro_autor, livro_editora, livro_publicacao, livro_data_registrado) VALUES (?, ?, ?, ?, ?)`;
-    const data = [titulo, autor, editora, publicacao, dataRegistrado];
+    return new Promise((resolve, reject) => {
+        const sql = `INSERT INTO livros (livro_titulo, livro_autor, livro_editora, livro_publicacao, livro_data_registrado) VALUES (?, ?, ?, ?, ?)`;
+        const data = [titulo, autor, editora, publicacao, dataRegistrado];
 
-    pool.query(sql, data, function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
+        pool.query(sql, data, function (err) {
+            err
+                ? reject(console.error(err))
+                : resolve(console.log('Successfully saved'));
+        });
     });
 };
 
 const buscarLivro = function () {
-    const sql = `SELECT * FROM livros`;
+    return new Promise((resolve, reject) => {
+        const sql = 'SELECT * FROM livros';
 
-    pool.query(sql, function (err, data) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        const book = data;
-        console.log(book);
+        pool.query(sql, (err, data) => {
+            err ? reject(err) : resolve(data);
+        });
     });
 };
 
 const buscarIdLivro = function (id) {
-    const sql = `SELECT * FROM livros WHERE livro_id = ?`;
-    const data = [id];
+    return new Promise((resolve, reject) => {
+        const sql = `SELECT * FROM livros WHERE livro_id = ?`;
+        const data = [id];
 
-    pool.query(sql, data, function (err, data) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        const book = data[0];
+        pool.query(sql, data, (err, data) => {
+            err ? reject(err) : resolve(data);
+        });
     });
 };
 
 const atualizarLivro = function ({ titulo, autor, editora, publicacao, id }) {
-    const sql = `UPDATE livros SET livro_titulo = ?, livro_autor = ?, livro_editora = ?, livro_publicacao = ? WHERE livro_id = ?`;
-    const data = [titulo, autor, editora, publicacao, id];
+    return new Promise((resolve, reject) => {
+        const sql = `UPDATE livros SET livro_titulo = ?, livro_autor = ?, livro_editora = ?, livro_publicacao = ? WHERE livro_id = ?`;
+        const data = [titulo, autor, editora, publicacao, id];
 
-    pool.query(sql, data, function (err, data) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        const book = data[0];
+        pool.query(sql, data, function (err, data) {
+            err
+                ? reject(console.error(err))
+                : resolve(console.log('Successfully saved'));
+        });
     });
 };
 
 const deleteLivro = function (id) {
-    const sql = `DELETE FROM livros WHERE id = ?`;
-    const data = [id];
+    return new Promise((resolve, reject) => {
+        const sql = `DELETE FROM livros WHERE livro_id = ?`;
+        const data = [id];
 
-    pool.query(sql, data, function (err) {
-        if (err) {
-            console.log(err);
-            return;
-        }
+        pool.query(sql, data, function (err) {
+            err ? reject(err) : resolve(data);
+        });
     });
 };
 

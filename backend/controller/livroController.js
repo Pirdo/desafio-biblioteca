@@ -6,19 +6,23 @@ const insertLivro = function (payload) {
 };
 
 const buscarLivro = function () {
-    livroModel.buscarLivro();
+    const results = livroModel.buscarLivro();
+    return results;
 };
 
-const buscarIdLivro = function (id) {
-    livroModel.buscarIdLivro(id);
+const buscarIdLivro = async function (id) {
+    const results = await livroModel.buscarIdLivro(id);
+    return results;
 };
 
 const atualizarLivro = function (payload) {
-    livroModel.atualizarLivro(payload);
+    const data = livroModel.atualizarLivro(payload);
+    return data;
 };
 
 const deleteLivro = function (id) {
-    livroModel.deleteLivro(id);
+    const data = livroModel.deleteLivro(id);
+    return data;
 };
 
 module.exports = {

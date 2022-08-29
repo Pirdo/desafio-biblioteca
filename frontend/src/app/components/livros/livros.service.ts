@@ -18,4 +18,15 @@ export class LivrosService {
     insertLivros(livro: Livro): Observable<Livro> {
         return this.httpClient.post<Livro>(`${this.baseUrl}/adicionar`, livro);
     }
+
+    updateLivros(livro: Livro): Observable<Livro> {
+        return this.httpClient.put<Livro>(
+            `${this.baseUrl}/atualizar/${livro.id}`,
+            livro
+        );
+    }
+
+    deleteLivros(id: number) {
+        return this.httpClient.delete(`${this.baseUrl}/deletar/${id}`);
+    }
 }

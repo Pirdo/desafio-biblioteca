@@ -15,6 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { LivrosCrudComponent } from './components/views/livros/livros-crud.component';
@@ -54,7 +55,8 @@ import { LivrosService } from './components/livros/livros.service';
         MatListModule,
         FormsModule,
         MatInputModule,
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [LivrosService, HttpClientModule],
     bootstrap: [AppComponent]
