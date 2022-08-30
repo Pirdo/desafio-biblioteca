@@ -1,6 +1,6 @@
 import { Livro } from './../../../models/livro';
 import { LivrosService } from './../livros.service';
-import { OnInit, Component, EventEmitter } from '@angular/core';
+import { OnInit, Component } from '@angular/core';
 import { __param } from 'tslib';
 import { GlobalService } from 'src/app/global.service';
 
@@ -11,7 +11,6 @@ import { GlobalService } from 'src/app/global.service';
 })
 export class LivroReadComponent implements OnInit {
     livro: Array<any> = new Array();
-    static emitirUpdade = new EventEmitter<Object>();
 
     constructor(
         private livroService: LivrosService,
@@ -24,7 +23,6 @@ export class LivroReadComponent implements OnInit {
 
     onDelete(id: number) {
         this.livroService.deleteLivros(id).subscribe(() => {
-            console.log('deleted');
             window.location.reload();
         });
     }
@@ -34,7 +32,6 @@ export class LivroReadComponent implements OnInit {
 
     listarLivros() {
         this.livroService.getLivros().subscribe((data) => {
-            console.log(`DATA: ${data}`);
             this.livro = data;
         });
     }

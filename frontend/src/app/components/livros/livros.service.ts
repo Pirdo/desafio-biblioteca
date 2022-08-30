@@ -20,10 +20,7 @@ export class LivrosService {
     }
 
     updateLivros(livro: Livro): Observable<Livro> {
-        return this.httpClient.put<Livro>(
-            `${this.baseUrl}/atualizar/${livro.id}`,
-            livro
-        );
+        return this.httpClient.put<Livro>(`${this.baseUrl}/atualizar`, livro);
     }
 
     deleteLivros(id: number) {

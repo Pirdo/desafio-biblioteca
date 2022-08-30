@@ -46,14 +46,7 @@ export class LivroCreateComponent implements OnInit {
                     Validators.maxLength(250)
                 ]
             ],
-            publicacao: [
-                null,
-                [
-                    Validators.required,
-                    Validators.minLength(3),
-                    Validators.maxLength(250)
-                ]
-            ]
+            publicacao: [null, [Validators.required, Validators.maxLength(250)]]
         });
     }
 
@@ -65,7 +58,6 @@ export class LivroCreateComponent implements OnInit {
             this.livroService
                 .insertLivros(this.form.value)
                 .subscribe((data) => {
-                    console.log(`DATA: ${data}`);
                     this.livro = data;
                 });
         }

@@ -1,7 +1,9 @@
 const livroModel = require('../model/livroModel');
+const dataFormatada = require('../helpers/formatDate');
 
 const insertLivro = function (payload) {
-    payload.dataRegistrado = new Date();
+    payload.dataRegistrado = dataFormatada();
+
     livroModel.insertLivro(payload);
 };
 

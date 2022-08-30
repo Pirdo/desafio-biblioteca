@@ -14,7 +14,7 @@ export class LivroUpdateComponent implements OnInit {
     form: FormGroup | any;
     subbmitted = false;
     livro: Livro | any;
-    texto = 'ola';
+    livros: any;
 
     constructor(
         private router: Router,
@@ -24,7 +24,7 @@ export class LivroUpdateComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.livro = this.globalService.getBook();
+        this.livros = this.globalService.getBook();
 
         this.form = this.formBuilder.group({
             titulo: [
@@ -62,17 +62,10 @@ export class LivroUpdateComponent implements OnInit {
         });
     }
 
-    onUpdate() {
+    onUpdate(livros: Livro) {
         this.subbmitted = true;
-        console.log(this.form.value);
         if (this.form.valid) {
-            console.log('edit');
-            this.livroService
-                .updateLivros(this.form.value)
-                .subscribe((data) => {
-                    console.log(`DATA: ${data}`);
-                    this.livro = data;
-                });
+            this.livroService.updateLivros(livros).subscribe((data) => {});
         }
     }
 

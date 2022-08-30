@@ -6,7 +6,7 @@
             type="text"
             placeholder="Título do livro"
             formControlName="titulo"
-            [(ngModel)]="livro.livro_titulo"
+            [(ngModel)]="livros.livro_titulo"
             required
         />
     </div>
@@ -17,7 +17,7 @@
             type="text"
             placeholder="Autor do livro"
             formControlName="autor"
-            [(ngModel)]="livro.livro_autor"
+            [(ngModel)]="livros.livro_autor"
             required
         />
     </div>
@@ -28,7 +28,7 @@
             type="text"
             placeholder="Editora do livro"
             formControlName="editora"
-            [(ngModel)]="livro.livro_editora"
+            [(ngModel)]="livros.livro_editora"
             required
         />
     </div>
@@ -39,9 +39,9 @@
             type="text"
             placeholder="Publicação do livro"
             formControlName="publicacao"
-            [(ngModel)]="livro.livro_publicacao"
+            [(ngModel)]="livros.livro_publicacao"
             required
         />
     </div>
-    <button type="submit" (click)="onUpdate()">Enviar</button>
+    <button type="submit" (click)="onUpdate(livros)">Enviar</button>
 </form>

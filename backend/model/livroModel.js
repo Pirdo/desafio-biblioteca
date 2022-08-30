@@ -13,9 +13,7 @@ const insertLivro = function ({
         const data = [titulo, autor, editora, publicacao, dataRegistrado];
 
         pool.query(sql, data, function (err) {
-            err
-                ? reject(console.error(err))
-                : resolve(console.log('Successfully saved'));
+            err ? reject(console.error(err)) : resolve('Successfully saved');
         });
     });
 };
@@ -41,15 +39,25 @@ const buscarIdLivro = function (id) {
     });
 };
 
-const atualizarLivro = function ({ titulo, autor, editora, publicacao, id }) {
+const atualizarLivro = function ({
+    livro_titulo,
+    livro_autor,
+    livro_editora,
+    livro_publicacao,
+    livro_id
+}) {
     return new Promise((resolve, reject) => {
         const sql = `UPDATE livros SET livro_titulo = ?, livro_autor = ?, livro_editora = ?, livro_publicacao = ? WHERE livro_id = ?`;
-        const data = [titulo, autor, editora, publicacao, id];
+        const data = [
+            livro_titulo,
+            livro_autor,
+            livro_editora,
+            livro_publicacao,
+            livro_id
+        ];
 
         pool.query(sql, data, function (err, data) {
-            err
-                ? reject(console.error(err))
-                : resolve(console.log('Successfully saved'));
+            err ? reject(console.error(err)) : resolve(data);
         });
     });
 };

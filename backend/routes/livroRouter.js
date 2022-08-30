@@ -27,12 +27,10 @@ router.get('/buscarId/:id', async (req, res) => {
     }
 });
 
-router.put('/atualizar/:id', async (req, res) => {
+router.put('/atualizar', async (req, res) => {
     try {
-        const busca = await livroController.buscarIdLivro(req.params.id);
         const data = await livroController.atualizarLivro(req.body);
         res.json(data);
-        console.log(busca);
     } catch (err) {
         console.error(err);
     }
